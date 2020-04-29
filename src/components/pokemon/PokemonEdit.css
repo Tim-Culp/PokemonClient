@@ -1,0 +1,46 @@
+#editButton {
+    background-color: rgb(226, 204, 0);
+    border-color: rgb(199, 179, 0);
+    display: block;
+    border-radius: 2vw;
+    margin: auto;
+    margin-top: 5vh;
+    width: 8vw;
+    font-size: 4vh;
+    padding: 1.5vh;
+    /* text-align: justify; */
+}
+#editButton:hover {
+    background-color: rgb(240, 219, 98);
+    border-color: rgb(255, 208, 0);
+}
+#deleteButton {
+    background-color: rgb(226, 0, 0);
+    border-color: rgb(199, 0, 0);
+    display: block;
+    border-radius: 2vh;
+    margin: auto;
+    margin-top: 5vh;
+    width: fit-content;
+    font-size: 4vh;
+    padding: 1.5vh;
+    text-align: justify;
+    letter-spacing: -0.05vw;
+    position: relative;
+    top: 1vh;
+}
+#deleteButton img {
+    width:4vh;
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+#deleteButton:hover {
+    background-color: rgb(240, 98, 98);
+    border-color: rgb(255, 0, 0);
+}
+#editButtonsDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}

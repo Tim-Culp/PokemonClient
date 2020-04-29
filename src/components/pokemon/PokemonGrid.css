@@ -1,0 +1,101 @@
+:root {
+    --pokemon-image-size: 9vw;
+    --pokemon-imageDiv-size: 10vw;
+}
+/* #pokemonTableDiv {
+    background-color: white;
+    border-radius: 75px 75px 0 0;
+    padding: 50px;
+    border: 1px solid lightgray;
+    position: relative;
+    height: 80vh;
+    width: 100%;
+} */
+/* #pokemonTableDiv{
+    background-color: white;
+    border-radius: 75px 75px 0 0;
+    padding: 50px;
+    border: 1px solid lightgray;
+} */
+#pokemonTable {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    height: 65vh;
+}
+.row {
+    width:100%;
+}
+.pokemonCard {
+    margin-right: 3.5vw;
+    margin-bottom: 3.5vh;
+    width: var(--pokemon-imageDiv-size);
+    border: none;
+    text-align: center;
+    background-color: transparent;
+    display: inline-block;
+}
+.pokemonCard img {
+    background-size: contain;
+    /* background-color: #5D5D5D; */
+    /* border-radius: 25px; */
+    height: var(--pokemon-image-size);
+    width: var(--pokemon-image-size);
+}
+.pokemonCard .card-header {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: none;
+}
+.pokemonCard p {
+    display: block;
+    margin: 0;
+    font-size: 1vw;
+}
+.pokemonCard h4 {
+    font-size: 1.5vw;
+    margin: 0;
+}
+.pokemonCard .card-body {
+    padding: 0;
+}
+.pokemonImageDiv .pokemonLevel {
+    position: absolute;
+    color:white;
+    width:100%;
+    bottom: 1vh;
+}
+.pokemonImageDiv {
+    position: relative;
+    width: 100%;
+    height: var(--pokemon-imageDiv-size);
+    background-color: #5D5D5D;
+    border-radius: 2.5vw;
+}
+#createLinkDiv {
+    position: absolute;
+    bottom: 1vh;
+    /* background-color: white; */
+    z-index: 1;
+    width: 100%;
+    left: 0;
+}
+#createPokemonLink {
+    width: 15vh;
+    height:15vh;
+    position: relative;
+    display: block;
+    margin: auto;
+    position: fixed;
+    /* position: absolute; */
+    /* bottom: 10px; */
+}
+
+#link {
+    /* background-color: black; */
+    height: 15vh;
+    width: 15vh;
+    display: block;
+    margin: auto;
+}

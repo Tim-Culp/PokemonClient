@@ -1,0 +1,44 @@
+#userFormButton {
+    display: block;
+    margin: auto;
+    background-color: #FA2E2E;
+    border-color: red;
+    margin-top: 30px;
+    position: relative;
+    transition-duration: 0s;
+}
+#userFormButton:hover {
+    background-color: rgb(255, 133, 133);
+    border-color: rgb(236, 116, 116);
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.144);
+    top: -3px;
+    transition-duration: 0s;
+}
+#userFormButton:active {
+    background-color: #FA2E2E;
+    border-color: red;
+    top: 0px;
+    box-shadow: none;
+}
+#passwordLabel {
+    margin-top: 10px;
+}
+#userForm {
+    /* background-color: rgb(130, 255, 130); */
+    padding: 30px;
+    padding-top: 15px;
+    border-radius: 30px;
+    margin-top: 25px;
+}
+#userForm h2 {
+    text-align: center;
+}
+#userForm span {
+    position: absolute;
+    right: 45px;
+    color: red;
+}
+.form-control, .form-control:active, .form-control:enabled {
+    background-color: rgb(255, 255, 255);
+    color: black;
+}

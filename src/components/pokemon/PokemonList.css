@@ -1,0 +1,52 @@
+#pokemonCard p {
+    float: right;
+    margin-right: 1vw;
+    text-align: right;
+    position: relative;
+    top: 3vw;
+    display: block;
+    font-size: 2vw;
+    height: fit-content;
+}
+#pokemonCard img {
+    float: right;
+    background-color: #5D5D5D;
+    border-radius: 3vw;
+    /* margin-bottom: 2vw; */
+    display: block;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    width: 10vw;
+    min-width: 10vw;
+    height: 10vw;
+}
+
+#pokemonCard {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    cursor: pointer;
+    margin-bottom: 2vw;
+    background-color: white;
+    border-radius: 3vw;
+    padding-left: 1vw;
+    overflow: hidden;
+    width: 100%;
+    float: right;
+    margin-right: 0;
+    position: relative;
+    right: -1.95vw;
+}
+#pokemonList {
+    /* list-style: none; */
+    display: block;
+    position: relative;
+    /* float: right; */
+    height: 65vh;
+    width: 100%;
+    overflow: scroll;
+    justify-content: right;
+    background-color: rgb(233, 233, 233);
+    border-radius: 2vw;
+    padding: 2vw;
+}

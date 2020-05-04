@@ -5,7 +5,7 @@
     image-rendering: pixelated;
     image-rendering: -moz-crisp-edges;
     background-color: #5D5D5D;
-    border-radius: 10vw;
+    border-radius: 6vw;
 }
 
 #createButton {

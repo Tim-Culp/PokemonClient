@@ -38,7 +38,7 @@ const PokemonGrid = (props) => {
         let count = 0;
         return pokemon.map((pkmn, i) => {
             let base = (
-                    <div style={{display: "block", float: "left"}}>
+                    <div key={i} style={{display: "block", float: "left"}}>
                         <Card onClick={() => editPokemon(pkmn)} className="pokemonCard" style={{color: pkmn.gender === "Male" ? "#7687FF" : "#FF70AE", cursor: "pointer"}}>
                             <div className="pokemonImageDiv">
                                 <CardImg src={pkmn.image} alt={pkmn.pokemon}/>
@@ -58,6 +58,9 @@ const PokemonGrid = (props) => {
     }
 
     useEffect(fetchPokemon, []);
+
+    //rest all pokemon on page load
+    
 
     
     return(

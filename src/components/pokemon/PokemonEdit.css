@@ -6,7 +6,7 @@
     margin: auto;
     margin-top: 5vh;
     width: 8vw;
-    font-size: 4vh;
+    font-size: 2vw;
     padding: 1.5vh;
     /* text-align: justify; */
 }
@@ -27,10 +27,10 @@
     text-align: justify;
     letter-spacing: -0.05vw;
     position: relative;
-    top: 1vh;
+    top: 0.5vw;
 }
 #deleteButton img {
-    width:4vh;
+    width:2vw;
     display: block;
     padding: 0;
     margin: 0;

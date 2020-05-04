@@ -1,0 +1,53 @@
+#pokemonTrainImage {
+    display: block;
+    margin: auto;
+    width: 30%;
+    position: absolute;
+    bottom: 0;
+    left: 35%;
+    transform: scale(-1, 1);
+    z-index: 1;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+}
+#trainingDiv {
+    /* background-image: url('../../assets/training.png'); */
+    width:100%;
+    display: block;
+    position: relative;
+    height: max-content;
+}
+#pokemonTrainingBG{
+    position: relative;
+    width:100%;
+    /* z-index: 0; */
+}
+#trainingTitle {
+    font-size: 2vw;
+    font-weight: bold;
+}
+#trainButton {
+    background-color: rgb(255, 85, 85);
+    border-color: red;
+    margin: 1vw auto;
+    display: block;
+    position: relative;
+    font-size: 2vw;
+    border-radius: 2vw;
+}
+#trainButton:hover {
+    background-color: rgb(255, 121, 121);
+    border-color: rgb(255, 74, 74);
+}
+#trainButton:active {
+    background-color:  rgb(255, 85, 85);
+    border-color: red;
+}
+#pokemonTrainLevel {
+    text-align: center;
+    font-size: 4vw;
+    margin: 1vw auto;
+    padding: 0;
+    font-weight: bold;
+    line-height: 100%;
+}

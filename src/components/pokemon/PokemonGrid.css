@@ -37,6 +37,8 @@
 }
 .pokemonCard img {
     background-size: contain;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
     /* background-color: #5D5D5D; */
     /* border-radius: 25px; */
     height: var(--pokemon-image-size);

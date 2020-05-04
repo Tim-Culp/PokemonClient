@@ -6,8 +6,11 @@ import PokemonCreate from './PokemonCreate';
 import PokemonEdit from './PokemonEdit'
 import './PokemonIndex.css';
 import LogOut from '../../assets/logout.png';
+import PokemonTrain from './PokemonTrain';
+import PokemonFight from './PokemonFight';
 
 const PokemonIndex = (props) => {
+    
     const [pokemonToEdit, setPokemonToEdit] = useState({});
     return(
         <div>
@@ -36,6 +39,12 @@ const PokemonIndex = (props) => {
                                 </Route>
                                 <Route path="/edit">
                                     <PokemonEdit pokemonToEdit={pokemonToEdit} sessionToken={props.sessionToken}/>
+                                </Route>
+                                <Route path="/training">
+                                    <PokemonTrain sessionToken={props.sessionToken}/>
+                                </Route>
+                                <Route path="/fighting">
+                                    <PokemonFight sessionToken={props.sessionToken}/>
                                 </Route>
                             </Switch>
                             

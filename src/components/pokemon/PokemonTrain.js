@@ -73,7 +73,7 @@ const PokemonTrain = (props) => {
                     {error ? <h3 id="error">{error}</h3> : null}
                 </Col>
                 <Col md="5" sm="12">
-                    <PokemonList url='http://localhost:3003/api/pokemon' sessionToken={props.sessionToken} selectedPokemon={pokemonToTrain} setSelectedPokemon={setPokemonToTrain}/>
+                    <PokemonList clearToken={props.clearToken} url='http://localhost:3003/api/pokemon' sessionToken={props.sessionToken} selectedPokemon={pokemonToTrain} setSelectedPokemon={setPokemonToTrain}/>
                 </Col>
 
             </Row>

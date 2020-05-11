@@ -50,3 +50,22 @@
     border-radius: 2vw;
     padding: 2vw;
 }
+#refreshButton {
+    display: block;
+    margin-right: 1vw;
+    float: right;
+    margin-bottom: 1vw;
+    font-size: 1vw;
+    height: 2.5vw;
+    border-radius: 2vw;
+    background-color: rgb(150, 150, 255);
+    border-color: rgb(125, 125, 255);
+}
+#refreshButton:hover {
+    background-color: rgb(170, 170, 255);
+    border-color: rgb(125, 125, 255);
+}
+#refreshButton:active {
+    background-color: rgb(150, 150, 255);
+    border-color: rgb(125, 125, 255);
+}

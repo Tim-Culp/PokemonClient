@@ -27,7 +27,6 @@ const PokemonIndex = (props) => {
                     </div>
                 
                 </Col>
-                {/* <Row id="mainRow"> */}
                     <Col id="routerCol" lg={{size: 10, offset:2}} md={{size: 10, offset:2}} sm="12">
                         <div id="gridContainer">
                             <Switch>
@@ -35,22 +34,21 @@ const PokemonIndex = (props) => {
                                     <PokemonGrid clearToken={props.clearToken} setPokemonToEdit={setPokemonToEdit} sessionToken={props.sessionToken}/>
                                 </Route>
                                 <Route exact path="/create">
-                                    <PokemonCreate sessionToken={props.sessionToken}/>
+                                    <PokemonCreate clearToken={props.clearToken} sessionToken={props.sessionToken}/>
                                 </Route>
                                 <Route path="/edit">
-                                    <PokemonEdit pokemonToEdit={pokemonToEdit} sessionToken={props.sessionToken}/>
+                                    <PokemonEdit clearToken={props.clearToken} pokemonToEdit={pokemonToEdit} sessionToken={props.sessionToken}/>
                                 </Route>
                                 <Route path="/training">
-                                    <PokemonTrain sessionToken={props.sessionToken}/>
+                                    <PokemonTrain clearToken={props.clearToken} sessionToken={props.sessionToken}/>
                                 </Route>
                                 <Route path="/fighting">
-                                    <PokemonFight sessionToken={props.sessionToken}/>
+                                    <PokemonFight clearToken={props.clearToken} sessionToken={props.sessionToken}/>
                                 </Route>
                             </Switch>
                             
                         </div>
                     </Col>
-                {/* </Row> */}
         </div>
     )
 }

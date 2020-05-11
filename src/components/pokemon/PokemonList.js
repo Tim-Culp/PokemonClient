@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './PokemonList.css'
+import { Button } from 'reactstrap';
 
 const PokemonList = (props) => {
     const [pokemon, setPokemon] = useState([]);
@@ -16,12 +17,17 @@ const PokemonList = (props) => {
             .then(res => res.json())
             .then(res => {
                 // console.log(res);
-                setPokemon(res.pokemon);
+                if (res.pokemon) {
+                    setPokemon(res.pokemon);
+
+                } else if (res.code === "badToken") {
+                    props.clearToken();
+                }
             })
     }
 
     const displayPokemon = () => {
-        if (pokemon) {
+        if (pokemon[0]) {
             return pokemon.map((pkmn, i) => {
                 return (
                         <div key={i} id="pokemonCard" onClick={() => props.setSelectedPokemon(pkmn)} style = {{backgroundColor: props.selectedPokemon.id === pkmn.id ? "rgb(170, 255, 170)" : "white"}}>
@@ -30,6 +36,8 @@ const PokemonList = (props) => {
                         </div>
                 )
             }) 
+        } else {
+            return (<h3 style={{color: "gray"}}>This list is empty...</h3>)
         }
     }
 
@@ -38,6 +46,7 @@ const PokemonList = (props) => {
     return(
         <div>
             <div id="pokemonList">
+                <Button id="refreshButton" onClick={fetchPokemon}>Refresh</Button>
                 {displayPokemon()}
             </div>
         </div>

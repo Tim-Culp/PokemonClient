@@ -82,9 +82,13 @@ const PokemonCreate = (props) => {
             })
             .then(res => res.json())
             .then(res => {
+                if (res.code === "badToken") {
+                    props.clearToken();
+                } else {
+                    history.push('/');
+                }
                 // console.log(res)
                 // console.log(type.join());
-                history.push('/');
             })
         }
     }

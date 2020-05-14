@@ -16,7 +16,7 @@ const PokemonList = (props) => {
         })
             .then(res => res.json())
             .then(res => {
-                // console.log(res);
+                // //console.log(res);
                 if (res.pokemon) {
                     setPokemon(res.pokemon);
 
@@ -37,7 +37,7 @@ const PokemonList = (props) => {
                 )
             }) 
         } else {
-            return (<h3 style={{color: "gray"}}>This list is empty...</h3>)
+            return (<h3 style={{color: "gray", fontSize: "2vw"}}>This list is empty...</h3>)
         }
     }
 

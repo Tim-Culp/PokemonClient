@@ -4,14 +4,15 @@ import { useHistory } from 'react-router-dom';
 import './PokemonEdit.css'
 import Trash from '../../assets/trash.png'
 import Unknown from '../../assets/unknown.png';
+import APIURL from '../../helpers/environment';
 
 const PokemonEdit = (props) => {
     const [name, setName] = useState(props.pokemonToEdit.name);
     const [error, setError] = useState('');
     let timeout;
     const history = useHistory();
-    // console.log(props);
-    // console.log(`"${props.pokemonToEdit.type}"`);
+    // //console.log(props);
+    // //console.log(`"${props.pokemonToEdit.type}"`);
 
     useEffect(()=> {
         if (error) {
@@ -21,7 +22,7 @@ const PokemonEdit = (props) => {
     }, [error])
 
     const handleSubmit = (e) => {
-        // console.log("SUBMITTED")
+        // //console.log("SUBMITTED")
         if (!props.pokemonToEdit.id) {
             setError('No Pokémon to edit!');
         } else if (name === props.pokemonToEdit.name) {
@@ -29,7 +30,7 @@ const PokemonEdit = (props) => {
         } else {
             e.preventDefault();
             if (!name) {setError("Please enter a name for your Pokémon!")} else {
-                fetch(`http://localhost:3003/api/pokemon/rename/${props.pokemonToEdit.id}`, {
+                fetch(`${APIURL}/api/pokemon/rename/${props.pokemonToEdit.id}`, {
                     method: "PUT",
                     headers: {
                         'content-type': 'application/json',
@@ -44,7 +45,7 @@ const PokemonEdit = (props) => {
                 })
                 .then(res => res.json())
                 .then(res => {
-                    // console.log(res)
+                    // //console.log(res)
                     history.push('/');
                 })
             }
@@ -56,7 +57,7 @@ const PokemonEdit = (props) => {
         if (!props.pokemonToEdit.id) {
             setError('No Pokémon to delete!');
         } else {
-            fetch(`http://localhost:3003/api/pokemon/delete/${props.pokemonToEdit.id}`, {
+            fetch(`${APIURL}/api/pokemon/delete/${props.pokemonToEdit.id}`, {
                 method: "DELETE",
                 headers: {
                     'content-type': 'application/json',
@@ -65,7 +66,7 @@ const PokemonEdit = (props) => {
             })
                 .then(res => res.json())
                 .then(res => {
-                    // console.log(res);
+                    // //console.log(res);
                     if (res.destroyed > 0) {
                         history.push('/');
                     } else {

@@ -3,6 +3,7 @@ import {Table as table, Card, CardImg, Col as div, CardBody, CardHeader, Contain
 import {Route, Router, Link, Switch, useHistory} from 'react-router-dom'
 import './PokemonGrid.css';
 import Ball from '../../assets/ball.png'
+import APIURL from '../../helpers/environment';
 
 const PokemonGrid = (props) => {
     const [pokemon, setPokemon] = useState([]);
@@ -10,7 +11,7 @@ const PokemonGrid = (props) => {
     const history = useHistory();
 
     let fetchPokemon = () => {
-    fetch('http://localhost:3003/api/pokemon', {
+    fetch(`${APIURL}/api/pokemon`, {
         method: "GET",
         headers: {
             'content-type': 'application/json',
@@ -19,7 +20,7 @@ const PokemonGrid = (props) => {
     })
         .then(res => res.json())
         .then(res => {
-            // console.log(res);
+            // //console.log(res);
             if (res.pokemon) {
                 setPokemon(res.pokemon);
             } else if (res.code === "badToken") {

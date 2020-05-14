@@ -3,6 +3,7 @@ import {Col, Row, Form, Input, Button, Label, FormGroup} from 'reactstrap'
 import UserForm from './UserForm';
 import { useHistory } from 'react-router-dom';
 import './Auth.css';
+import APIURL from '../../helpers/environment';
 
 
 const Auth = (props) => {
@@ -20,7 +21,8 @@ const Auth = (props) => {
 
     const sendInfo = (username, password) => {
         let url;
-        loggingIn ? url = 'http://localhost:3003/api/users/login' : url = 'http://localhost:3003/api/users/create'
+        console.log("URL IS", APIURL);
+        loggingIn ? url = `${APIURL}/api/users/login` : url = `${APIURL}/api/users/create`
         fetch(url, {
             method: "POST",
             headers: {

@@ -3,6 +3,7 @@ import PokemonList from './PokemonList';
 import { Col, Row, Button } from 'reactstrap';
 import Training from '../../assets/training.png'
 import './PokemonTrain.css'
+import APIURL from '../../helpers/environment';
 
 
 const PokemonTrain = (props) => {
@@ -21,7 +22,7 @@ const PokemonTrain = (props) => {
     useEffect(()=>{
 
         return(() => {
-            fetch('http://localhost:3003/api/pokemon/restall', {
+            fetch(`${APIURL}/api/pokemon/restall`, {
                 method: "PUT",
                 headers: {
                     "content-type": "application/json",
@@ -35,7 +36,7 @@ const PokemonTrain = (props) => {
         if (!pokemonToTrain.image) {
             setError(`You haven't selected a Pokémon to train!`);
         } else {
-            fetch(`http://localhost:3003/api/pokemon/train/${pokemonToTrain.id}`, {
+            fetch(`${APIURL}/api/pokemon/train/${pokemonToTrain.id}`, {
                 method: "PUT",
                 headers: {
                     'content-type': 'application/json',
@@ -44,7 +45,7 @@ const PokemonTrain = (props) => {
             })
                 .then(res => res.json())
                 .then(res => {
-                    console.log(res);
+                    //console.log(res);
                     setPokemonToTrain(res.pokemon);
                 })
         }
@@ -73,7 +74,7 @@ const PokemonTrain = (props) => {
                     {error ? <h3 id="error">{error}</h3> : null}
                 </Col>
                 <Col md="5" sm="12">
-                    <PokemonList clearToken={props.clearToken} url='http://localhost:3003/api/pokemon' sessionToken={props.sessionToken} selectedPokemon={pokemonToTrain} setSelectedPokemon={setPokemonToTrain}/>
+                    <PokemonList clearToken={props.clearToken} url={`${APIURL}/api/pokemon`} sessionToken={props.sessionToken} selectedPokemon={pokemonToTrain} setSelectedPokemon={setPokemonToTrain}/>
                 </Col>
 
             </Row>

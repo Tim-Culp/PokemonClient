@@ -9,6 +9,33 @@
     position:fixed;
     bottom: 0;
 }
+#menuDiv {
+    background-color: rgb(150, 150, 255);
+    height: 12vh;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 83.35vw;
+}
+#menuDiv ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    height: 100%;
+}
+#menuDiv ul li {
+    margin-right: 4vw;
+    height: fit-content;
+    margin-top: 1.3vw;
+    font-size: 5vh;
+    /* background-color: purple; */
+    display: block;
+    position: relative;
+}
+#menuDiv ul li a {
+    color: white;
+    height: fit-content;
+}
 #sidebarCol {
     background-color: #5D5D5D;
     height: 100vh;

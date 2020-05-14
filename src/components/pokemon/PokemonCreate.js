@@ -3,6 +3,7 @@ import {Form, FormGroup, Input, Button, Col, Row} from 'reactstrap';
 import { useHistory } from 'react-router-dom';
 import './PokemonCreate.css'
 import Unknown from '../../assets/unknown.png'
+import APIURL from '../../helpers/environment';
 
 const PokemonCreate = (props) => {
     const [name, setName] = useState('');
@@ -39,7 +40,7 @@ const PokemonCreate = (props) => {
             .then(res => res.json())
             .then(res => {
                 if (res.sprites) {
-                    // console.log(res);
+                    // //console.log(res);
                     if (sex === "Female" && res.sprites.front_female) {
                         setImage(res.sprites.front_female);
                     } else {
@@ -60,10 +61,10 @@ const PokemonCreate = (props) => {
     }
 
     const handleSubmit = (e) => {
-        // console.log("SUBMITTED")
+        // //console.log("SUBMITTED")
         e.preventDefault();
         if (!name) {setError("Please enter a name for your Pokémon!")} else if (image === Unknown) {setError("Your Pokémon choice doesn't exist!")} else {
-            fetch('http://localhost:3003/api/pokemon/create', {
+            fetch(`${APIURL}/api/pokemon/create`, {
                 method: "POST",
                 headers: {
                     'content-type': 'application/json',
@@ -87,8 +88,8 @@ const PokemonCreate = (props) => {
                 } else {
                     history.push('/');
                 }
-                // console.log(res)
-                // console.log(type.join());
+                // //console.log(res)
+                // //console.log(type.join());
             })
         }
     }

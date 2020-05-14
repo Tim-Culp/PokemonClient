@@ -5,9 +5,12 @@ import './App.css';
 import Auth from './components/auth/Auth';
 import PokemonIndex from './components/pokemon/PokemonIndex';
 import {BrowserRouter} from 'react-router-dom';
+import Splash from './components/auxiliary/Splash'
 
 function App() {
   const [sessionToken, setSessionToken] = useState('');
+
+  const [onSplash, setOnSplash] = useState(false);
 
   useEffect(() => {
     if (localStorage.getItem('pokemonSessionToken')) {
@@ -19,26 +22,26 @@ function App() {
     if (token) {
       localStorage.setItem('pokemonSessionToken', token);
       setSessionToken(token);
-      console.log("session token updated.");
+      //console.log("session token updated.");
     }
   }
 
   const clearToken = () => {
     localStorage.removeItem('pokemonSessionToken');
     setSessionToken('');
-    console.log("session token cleared.")
+    //console.log("session token cleared.")
   }
 
   const protectedViews = () => {
     return (
-      sessionToken === localStorage.getItem('pokemonSessionToken') ? <PokemonIndex clearToken={clearToken} sessionToken={sessionToken}/> : <Auth updateToken={updateToken}/>
+      sessionToken === localStorage.getItem('pokemonSessionToken') ? <PokemonIndex clearToken={clearToken} loadSplash={() => setOnSplash(true)} sessionToken={sessionToken}/> : <Auth updateToken={updateToken}/>
     )
   }
 
   return (
     <div>
       <BrowserRouter>
-        {protectedViews()}
+        {!onSplash ? protectedViews() : <Splash/>}
       </BrowserRouter>
     </div>
   );

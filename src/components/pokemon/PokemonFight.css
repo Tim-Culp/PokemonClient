@@ -1,0 +1,68 @@
+#hasFoughtDiv div {
+    margin-bottom: 40px;
+    background-color: rgb(240, 240, 240);
+    border-radius: 5vw;
+    width: fit-content;
+    padding: 0.5vw;
+    padding-right: 1.5vw;
+    height: fit-content;
+    padding-bottom: 0vw;
+    padding-top: 1vw;
+}
+
+#hasFoughtDiv div img{
+    float: left;
+    width: 100px;
+    height: 100px;
+    max-width: 200px;
+}
+#hasFoughtDiv div div p {
+    float: left;
+    display: block;
+    font-size: 15pt;
+}
+
+#hostButton {
+    background-color: purple;
+    border-color: purple;
+    border-radius: 100vw;
+    height: 25vw;
+    width: 25vw;
+    font-size: 5vw;
+    margin: auto;
+    display: block;
+    margin-top: 4vw;
+}
+#joinFightTitle{
+    font-size: 1.5vw;
+}
+#hostButton:hover {
+    background-color: rgb(192, 0, 240);
+    border-color: rgb(192, 0, 240);
+}
+#hostButton:active {
+    background-color: purple;
+    border-color: purple;
+}
+
+#joinButton {
+    display: block;
+    margin: auto;
+    background-color: rgb(0, 223, 0);
+    border-color: rgb(0, 223, 0);
+    border-radius: 2vw;
+    padding: 0.5vw 1vw;
+    font-size: 1.5vw;
+    margin-top: 1vw;
+    /* transform: rotate(45deg); */
+}
+
+#joinButton:hover {
+    background-color: rgb(78, 245, 78);
+    border-color: rgb(78, 245, 78);
+}
+
+#joinButton:active {
+    background-color: rgb(0, 223, 0);
+    border-color: rgb(0, 223, 0);
+}
